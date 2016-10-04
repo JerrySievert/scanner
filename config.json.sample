@@ -1,0 +1,22 @@
+{
+  "notification": {
+    "users": [
+      "user"
+    ],
+    "token": "token"
+  },
+  "coordinates": {
+    "swLat": 45.5176431802296,
+    "swLng": -122.70955882814405,
+    "neLat": 45.52807661913786,
+    "neLng": -122.65462718751905
+  },
+  "pokemon": [
+    "Dragonite",
+    "Dragonair",
+    "Dratini",
+    "Seel",
+    "Snorlax",
+    "Lapras"
+  ]
+}
