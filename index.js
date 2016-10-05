@@ -2,10 +2,18 @@ var notifier = require('./lib/pushover');
 var scanner = require('./lib/scan');
 
 var fs = require('fs');
+var crypto = require('crypto');
 
 var config = require('./config.json');
 
 var known = { };
+
+function make_key(longitude, latitude, pokemon_id, disappear_time) {
+  var key = longitude + ":" + latitude + ":" + pokemon_id + ":" + disappear_time;
+  return crypto.createHmac('sha256', secret)
+               .update(key)
+               .digest('hex');
+}
 
 function notify (pokemon) {
   if (config.pokemon.indexOf(pokemon.pokemon_name) !== -1) {
@@ -16,12 +24,14 @@ function notify (pokemon) {
     notifier.notify(config.notification.users, config.notification.token, message);
   }
 }
+
 function update_known (data) {
   var current = (+(new Date()));
 
   data.pokemons.forEach(function (c, i, a) {
-    if (known[c.encounter_id] === undefined) {
-      known[c.encounter_id] = c;
+    var key = make_key(c.longitude, c.latitude, c.pokemon_id, c.disappear_time);
+    if (known[key] === undefined) {
+      known[key] = c;
 
       notify(c);
     }
