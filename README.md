@@ -12,6 +12,6 @@ Copy `config.json.sample` to `config.sample`.
 
 ### Parameters
 
-`coordinate` - bounding box of where to search
-`pokemon` - list of pokemon to search for`
-`save` - whether to save each request
+* `coordinate` - bounding box of where to search
+* `pokemon` - list of pokemon to search for
+* `save` - whether to save each request
