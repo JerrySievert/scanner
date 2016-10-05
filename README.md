@@ -8,7 +8,7 @@ Notifications use Pushover (pushover.net), you will need to download the app and
 
 ## Configuration
 
-Copy `config.json.sample` to `config.sample`.
+Copy `config.json.sample` to `config.json`.
 
 ### Parameters
 
