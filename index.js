@@ -10,7 +10,7 @@ var known = { };
 
 function make_key(longitude, latitude, pokemon_id, disappear_time) {
   var key = longitude + ":" + latitude + ":" + pokemon_id + ":" + disappear_time;
-  return crypto.createHmac('sha256', secret)
+  return crypto.createHmac('sha256', 'secret')
                .update(key)
                .digest('hex');
 }
