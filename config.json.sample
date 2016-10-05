@@ -1,9 +1,9 @@
 {
   "notification": {
     "users": [
-      "user"
+      "your pushover userid"
     ],
-    "token": "token"
+    "token": "your pushover token"
   },
   "coordinates": {
     "swLat": 45.5176431802296,
@@ -18,5 +18,6 @@
     "Seel",
     "Snorlax",
     "Lapras"
-  ]
+  ],
+  "save": true
 }
